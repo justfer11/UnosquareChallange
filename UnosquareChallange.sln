@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnosquareChallange", "UnosquareChallange\UnosquareChallange.csproj", "{65A9ED0E-3AEC-409D-915F-F236763B7E7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65A9ED0E-3AEC-409D-915F-F236763B7E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A9ED0E-3AEC-409D-915F-F236763B7E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A9ED0E-3AEC-409D-915F-F236763B7E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A9ED0E-3AEC-409D-915F-F236763B7E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78F41B98-6B78-418E-9165-615A0A7AE5A1}
+	EndGlobalSection
+EndGlobal
