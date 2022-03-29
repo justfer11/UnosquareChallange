@@ -13,11 +13,9 @@ namespace UnosquareChallange.StepsDefinitions
     public sealed class MicrosoftPage_Steps : ConstructURL
     {
         private readonly IWebDriver _driver;
-        private ConstructURL url;
         private Microsoft_PageObj mspage;
         private string page;
         private string locale;
-        private string completeURL;
 
         public MicrosoftPage_Steps(IWebDriver driver)
         {

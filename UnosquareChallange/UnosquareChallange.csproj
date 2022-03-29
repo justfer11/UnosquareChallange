@@ -82,6 +82,7 @@
     <Compile Include="StepsDefinitions\ShoppingCart_Steps.cs" />
     <Compile Include="StepsDefinitions\WindowsPage_Steps.cs" />
     <Compile Include="Utils\ConstructURL.cs" />
+    <Compile Include="Utils\DataCollection.cs" />
     <Compile Include="Utils\Element.cs" />
     <Compile Include="Utils\Hooks.cs" />
   </ItemGroup>
