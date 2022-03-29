@@ -2,6 +2,7 @@
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using BoDi;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -34,8 +35,10 @@ namespace UnosquareChallange.Utils
         //Start Creating Report html
         public static void StartReport()
         {
-            string _path = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName);
-            var htmlReporter = new ExtentHtmlReporter(_path);
+            string time = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss");
+            var dir = TestContext.CurrentContext.TestDirectory + "\\";
+            var fileName = "ReportTest_"+time+".html";
+            var htmlReporter = new ExtentHtmlReporter(dir + fileName);
             htmlReporter.Configuration().Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
 
             extent = new ExtentReports();
@@ -62,12 +65,7 @@ namespace UnosquareChallange.Utils
             scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
         }
 
-        [AfterTestRun]
-        public static void TearDown()
-        {
-            extent.Flush();
-            webdriver.Quit();
-        }
+       
 
         [AfterStep]
 
@@ -104,9 +102,14 @@ namespace UnosquareChallange.Utils
                     scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Skip("Step Definition Pending");
                 else if (stepType == "Then")
                     scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Skip("Step Definition Pending");
-
             }
+        }
 
+        [AfterTestRun]
+        public static void TearDown()
+        {
+            extent.Flush();
+            webdriver.Quit();
         }
     }
 }
