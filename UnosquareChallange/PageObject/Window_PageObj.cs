@@ -26,10 +26,15 @@ namespace UnosquareChallange.PageObject
 
         public void SearchItem()
         {
-            element.WaitForElementsLoad();
+            element.WaitForElementsLoad();            
+            element.WaitForElementVisible(SearchIcon);
             Assert.IsTrue(element.IsElementClickable(SearchIcon), "Search Icon is not clickable");
+            element.WaitForElementVisible(SearchTxtbox);
             Assert.IsTrue(element.IsElementDisplayed(SearchTxtbox), "Search text box is not displayed");
-            SearchTxtbox.SendKeys("Xbox");
+            var data = DataCollection.GetSearchValue();
+            Console.WriteLine(data);
+            string text = DataCollection.DeserializeJsonFile(data);
+            SearchTxtbox.SendKeys(text);
             SearchIcon.Click();
         }
 

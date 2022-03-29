@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace UnosquareChallange.PageObject
 {
-    class Data_Objects
+    public class Data_Objects
     {
-        public string text { get; set; }
+        public class Search
+        {
+            public string SearchValue { get; set; }
+        }
     }
 }
+
+

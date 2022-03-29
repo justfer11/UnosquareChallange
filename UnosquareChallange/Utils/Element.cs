@@ -18,7 +18,7 @@ namespace UnosquareChallange.Utils
         
         public void WaitForElementsLoad()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         public void WaitForElementVisible(IWebElement element)
@@ -91,19 +91,5 @@ namespace UnosquareChallange.Utils
             Console.WriteLine(items);
             return items;           
         }
-
-        //public static List<Data_Objects> GetText(string text)
-        //{
-        //    var SearchFile = System.IO.Path.GetTempFileName();
-        //    using (TextReader reader = new StreamReader(SearchFile))
-        //    {
-        //        string jsonTxt = reader.ReadToEnd();
-        //        string value = JsonConvert.DeserializeObject<List<Data_Objects>();
-        //    }
-
-        //    return null;
-        //}
-
-
     }
 }
