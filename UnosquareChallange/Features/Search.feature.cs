@@ -71,13 +71,11 @@ namespace UnosquareChallange.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search, count elements, compare prices, check items availables, and remove items," +
-            "")]
+        [NUnit.Framework.DescriptionAttribute("Search Item, Count Elements, Add and Remove from chart")]
         [NUnit.Framework.CategoryAttribute("E2ETest")]
-        public virtual void SearchCountElementsComparePricesCheckItemsAvailablesAndRemoveItems()
+        public virtual void SearchItemCountElementsAddAndRemoveFromChart()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search, count elements, compare prices, check items availables, and remove items," +
-                    "", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Item, Count Elements, Add and Remove from chart", null, new string[] {
                         "E2ETest"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);

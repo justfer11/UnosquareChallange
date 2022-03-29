@@ -21,11 +21,15 @@ namespace UnosquareChallange.PageObject
             element = new Element(_driver);
         }
 
+        #region Web Elements
         IWebElement RegisterPopUp => _driver.FindElement(By.Id("email-newsletter-dialog"));
         IWebElement ClosePopUpIcon => _driver.FindElement(By.XPath("//div[@class='sfw-dialog']//div[@class='c-glyph glyph-cancel']"));
         IWebElement PriceLabel => _driver.FindElement(By.XPath("//div[@id='productPrice']//span"));
         IWebElement ShopOptionsBtn => _driver.FindElement(By.Id("ButtonPanel_buttonPanel_OverflowMenuTrigger"));
         IWebElement AddToCart => _driver.FindElement(By.Id("buttonPanel_AddToCartButton"));
+        #endregion Web Elements
+
+        //Check whether Registration pop up is displayed or not and close it
         public void CloseRegistrationPopup()
         {
             element.WaitForElementsLoad();
@@ -37,6 +41,7 @@ namespace UnosquareChallange.PageObject
             }
         }
 
+        //Compare prices from page results against item description page using a global variable
         public void ComparePrices()
         {
             element.WaitForElementsLoad();
@@ -47,6 +52,7 @@ namespace UnosquareChallange.PageObject
             Assert.That(actualPrice.Equals(listPrice), Is.True);
         }
 
+        //Click on Add To Cart... This is a good challange, It wasn't easy to find Add to Cart button in the DOM
         public void ClickOnAddToCart()
         {
             Assert.IsTrue(element.IsElementClickable(ShopOptionsBtn), "Shop option button is not clickable");

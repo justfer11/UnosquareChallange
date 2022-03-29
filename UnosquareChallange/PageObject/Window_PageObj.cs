@@ -20,15 +20,25 @@ namespace UnosquareChallange.PageObject
             element = new Element(_driver);
         }
 
+        #region Web Elements
+
         IWebElement SearchIcon => _driver.FindElement(By.Id("search"));
         IWebElement SearchTxtbox => _driver.FindElement(By.Id("cli_shellHeaderSearchInput"));
         IWebElement ShoppingTab => _driver.FindElement(By.XPath("//a[contains(@href, '/shop')]"));
 
-        public void SearchItem()
+        #endregion Web Elements
+
+        //Click on Search icon in Windows page
+        public void ClicOnSearchButton()
         {
-            element.WaitForElementsLoad();            
+            element.WaitForElementsLoad();
             element.WaitForElementVisible(SearchIcon);
             Assert.IsTrue(element.IsElementClickable(SearchIcon), "Search Icon is not clickable");
+        }
+
+        //Look for an Item in the search textbox, using a Json file
+        public void SearchItem()
+        {
             element.WaitForElementVisible(SearchTxtbox);
             Assert.IsTrue(element.IsElementDisplayed(SearchTxtbox), "Search text box is not displayed");
             var data = DataCollection.GetSearchValue();
@@ -38,6 +48,7 @@ namespace UnosquareChallange.PageObject
             SearchIcon.Click();
         }
 
+        //Click on Comprar link
         public void ClickOnShoppingLink()
         {
             element.WaitForElementsLoad();

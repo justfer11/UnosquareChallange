@@ -11,6 +11,7 @@ namespace UnosquareChallange.Utils
     [Binding]
     public abstract class ConstructURL
     {
+        //Abstract class
         public abstract void Create_URL();     
     }
 }
