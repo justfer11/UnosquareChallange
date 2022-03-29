@@ -23,6 +23,8 @@ namespace UnosquareChallange.StepsDefinitions
             mspage = new Microsoft_PageObj(_driver);
 
         }
+
+        //Using an Abstract Class:
         public override void Create_URL()
         {
             string completeURL = "https://www." + page + ".com" + "/" + locale + "/"; ;

@@ -10,6 +10,7 @@ namespace UnosquareChallange.PageObject
     {
         public class Search
         {
+            //Object to select value on JsonFile
             public string SearchValue { get; set; }
         }
     }

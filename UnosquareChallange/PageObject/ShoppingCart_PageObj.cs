@@ -20,11 +20,14 @@ namespace UnosquareChallange.PageObject
             element = new Element(_driver);
         }
 
+        #region Web Elements
         IWebElement CartTitle => _driver.FindElement(By.XPath("//h2[@class='header--+mZZyTaz c-heading x-hidden-focus']"));
         IWebElement CartIcon => _driver.FindElement(By.Id("uhf-shopping-cart"));
         IWebElement RemoveItemButton => _driver.FindElement(By.XPath("//div[@class='legalAndStatementContainer--dz8EQOG7']//button[1]"));
         IWebElement CartEmptyMessage => _driver.FindElement(By.XPath("//p[@class='c-paragraph-2']"));
+        #endregion Web Elements
 
+        //Validate if item is available in Cart
         public void VerifyElementsShoppingCart()
         {
             element.WaitForElementsLoad();
@@ -36,6 +39,7 @@ namespace UnosquareChallange.PageObject
             Assert.That(items.Equals(1), Is.True);
         }
 
+        //Validate if item is not available in Cart anymore after removing it
         public void VerifyItemDeleted()
         {
             Assert.True(element.IsElementClickable(RemoveItemButton), "Remove Item button is not clickable");

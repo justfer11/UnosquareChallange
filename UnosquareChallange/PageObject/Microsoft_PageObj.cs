@@ -21,6 +21,7 @@ namespace UnosquareChallange.PageObject
         }
         IWebElement WindowsLink => _driver.FindElement(By.XPath("//li[@class='single-link js-nav-menu uhf-menu-item']//a[@href='https://www.microsoft.com/es-mx/windows/']"));
 
+        //Click on Windows link in Microsoft page
         public void ClickWindowsLink()
         {
             Assert.IsTrue(element.IsElementClickable(WindowsLink), "Windows link is not clickable");

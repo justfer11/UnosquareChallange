@@ -3,7 +3,7 @@
 	from microsofot windows application page.
 
 @E2ETest
-Scenario: Search, count elements, compare prices, check items availables, and remove items, 
+Scenario: Search Item, Count Elements, Add and Remove from chart
 	Given I go to 'microsoft' in 'es-mx' locale
 	And I go to Windows page
 	When I search for Xbox item

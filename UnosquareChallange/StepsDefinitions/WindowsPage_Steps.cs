@@ -24,6 +24,7 @@ namespace UnosquareChallange.StepsDefinitions
         [When(@"I search for Xbox item")]
         public void WhenISearchForItems()
         {
+            winpage.ClicOnSearchButton();
             winpage.SearchItem();
         }
 

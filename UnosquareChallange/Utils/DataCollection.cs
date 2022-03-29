@@ -12,7 +12,10 @@ namespace UnosquareChallange.Utils
 {
     public static class DataCollection
     {        
+        //Look for json file in Utils folder
         private static string _path = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName, @"Utils\Search.json");
+
+        //Read json file and return the value
         public static string GetSearchValue()
         {
             string value;
@@ -23,6 +26,7 @@ namespace UnosquareChallange.Utils
             return value;
         }
 
+        //Return value from json file using deserialize
         public static string DeserializeJsonFile(string data)
         {
             Data_Objects.Search value = JsonConvert.DeserializeObject<Data_Objects.Search>(data);
